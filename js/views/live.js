@@ -209,11 +209,14 @@ export async function loadGauges(ctx, id) {
     }
     const list = items
       .map((g) => {
-        const cat = g.category && g.category !== 'no_flooding' ? g.category : '';
-        const fc = g.forecastCategory && g.forecastCategory !== 'no_flooding' && g.forecastCategory !== g.category ? g.forecastCategory : '';
+        // NWPS also reports codes like not_defined, fcst_not_current and out_of_service;
+        // only real flood stages get a label.
+        const stage = (c) => (c && c !== 'no_flooding' && floodLabel(c) ? c : '');
+        const cat = stage(g.category);
+        const fc = g.forecastCategory !== g.category ? stage(g.forecastCategory) : '';
         return `<li class="gauge ${cat ? 'flood-' + cat : ''}">
           <div>${ext(g.url, g.name)}</div>
-          <div class="small">${esc(g.level)} ${esc(g.unit || '')}${cat ? ` · <strong>${esc(floodLabel(cat))}</strong>` : ' · Normal'}${fc ? ` · Forecast: <strong>${esc(floodLabel(fc))}</strong>` : ''} · ${esc(distanceLabel(place, g.lat, g.lon))}</div>
+          <div class="small">${esc(g.level)} ${esc(g.unit || '')}${cat ? ` · <strong>${esc(floodLabel(cat))}</strong>` : g.category === 'no_flooding' ? ' · Normal' : ''}${fc ? ` · Forecast: <strong>${esc(floodLabel(fc))}</strong>` : ''} · ${esc(distanceLabel(place, g.lat, g.lon))}</div>
         </li>`;
       })
       .join('');

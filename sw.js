@@ -2,7 +2,7 @@
 // App files are network-first (fresh when online, cached when the signal drops);
 // ZIP data chunks are cache-first because they never change between releases.
 
-const VERSION = 'stormcheck-v2';
+const VERSION = 'stormcheck-v3';
 const APP_FILES = [
   './',
   './index.html',
