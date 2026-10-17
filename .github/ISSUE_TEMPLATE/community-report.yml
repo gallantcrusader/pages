@@ -1,0 +1,71 @@
+name: Community report
+description: Report an outage, boil-water notice, or how a provider is responding in your area. Reports are public.
+title: "[Report] "
+labels: ["community-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This report is public.** Don't include names, street addresses, phone numbers or account numbers.
+        Life-threatening emergency? **Call 911.** Downed power line? Call 911 and your utility.
+  - type: input
+    id: zip
+    attributes:
+      label: ZIP code
+      placeholder: "78205"
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service
+      options:
+        - Power
+        - Internet
+        - Water
+        - Cell service
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Provider
+      placeholder: e.g. CPS Energy, Spectrum, SAWS
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Outage ongoing
+        - Service restored
+        - Boil-water notice
+        - Provider gave an ETA
+        - Provider missed an ETA
+        - No response from provider
+        - Price gouging
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: started
+    attributes:
+      label: When did it start?
+      placeholder: "Oct 9, 9:30 PM"
+  - type: input
+    id: restored
+    attributes:
+      label: When was it restored? (if it was)
+      placeholder: "Oct 11, 2:15 PM"
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What happened, what the provider told you, ticket times, how long you waited.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before posting
+      options:
+        - label: This report is accurate to the best of my knowledge and contains no personal information.
+          required: true
