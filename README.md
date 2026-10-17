@@ -15,7 +15,7 @@ StormCheck keeps people in storm- and disaster-prone areas informed during an ev
 | **Safety** | Offline guides: prep checklist, during/after the storm, power outages, generators & carbon monoxide, boil water, flooding, heat illness, food & insulin, scams, mental health. Emergency numbers you can save to your phone's contacts or print. |
 
 ### Finding providers
-- **Automatically:** the app looks up the ZIP's center point on public service-territory maps (electric: HIFLD/ORNL retail service territories; water: EPA community water system boundaries) and matches the result to its directory.
+- **Automatically:** the app looks up the ZIP's center point on public service-territory maps (electric: EIA/ORNL retail service territories via Pacific Northwest National Laboratory; water: EPA community water system boundaries) and matches the result to its directory.
 - **From drop-downs:** each service has a drop-down with providers common in your ZIP, in your state, and nationwide — or type in your own.
 - Providers are saved per ZIP, so you can also check on family elsewhere.
 
@@ -63,7 +63,7 @@ GitHub Pages serves the repository root as-is (`.nojekyll` is included). In **Se
 - Local storm reports: NWS via the [Iowa Environmental Mesonet](https://mesonet.agron.iastate.edu)
 - River gauges: [NOAA National Water Prediction Service](https://water.noaa.gov)
 - Disaster declarations: [OpenFEMA](https://www.fema.gov/about/openfema)
-- Water system boundaries: U.S. EPA; electric retail service territories: HIFLD / Oak Ridge National Laboratory
+- Water system boundaries: U.S. EPA; electric retail service territories: EIA / Oak Ridge National Laboratory, hosted by Pacific Northwest National Laboratory
 - ZIP codes: [GeoNames](https://www.geonames.org) (CC BY 4.0) and the `zipcodes-nrviens` package (BSD-2-Clause)
 - Safety guidance: Ready.gov, CDC, EPA, USDA/FoodSafety.gov, FDA, FEMA
 

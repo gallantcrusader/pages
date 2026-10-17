@@ -17,7 +17,7 @@ export const STATES = {
   },
   LA: {
     ema: ['GOHSEP (Louisiana emergency management)', 'https://gohsep.la.gov'],
-    evac: ['Get A Game Plan (evacuation info)', 'https://getagameplan.org'],
+    evac: ['Get A Game Plan (GOHSEP)', 'https://gohsep.la.gov/get-a-game-plan/'],
     roads: ['511 Louisiana', 'https://www.511la.org'],
     puc: ['Louisiana Public Service Commission', 'https://www.lpsc.louisiana.gov'],
     ag: ['Louisiana Attorney General', 'https://www.ag.state.la.us'],
@@ -83,8 +83,8 @@ export const STATES = {
   MD: {
     ema: ['Maryland Dept. of Emergency Management', 'https://mdem.maryland.gov'],
     roads: ['Maryland CHART traffic', 'https://chart.maryland.gov'],
-    puc: ['Maryland Public Service Commission', 'https://www.psc.state.md.us'],
-    ag: ['Maryland Attorney General', 'https://www.marylandattorneygeneral.gov'],
+    puc: ['Maryland Public Service Commission', 'https://psc.maryland.gov'],
+    ag: ['Maryland Attorney General', 'https://oag.maryland.gov'],
     water: ['Maryland Dept. of the Environment', 'https://mde.maryland.gov'],
   },
   DE: {
@@ -102,7 +102,7 @@ export const STATES = {
   },
   NY: {
     ema: ['NY Division of Homeland Security & Emergency Services', 'https://www.dhses.ny.gov'],
-    evac: ['NYC: Know Your Zone', 'https://www.nyc.gov/knowyourzone'],
+    evac: ['NYC: Hurricane Evacuation Zone Finder', 'https://maps.nyc.gov/hurricane/'],
     roads: ['511NY', 'https://511ny.org'],
     puc: ['NY Department of Public Service', 'https://dps.ny.gov'],
     ag: ['NY Attorney General', 'https://ag.ny.gov'],
@@ -133,7 +133,7 @@ export const STATES = {
     ag: ['Maine Attorney General', 'https://www.maine.gov/ag'],
   },
   PR: {
-    ema: ['Negociado para el Manejo de Emergencias (NMEAD)', 'https://manejodeemergencias.pr.gov'],
+    ema: ['Negociado para el Manejo de Emergencias (NMEAD)', 'https://dsp.pr.gov/negociados/negociado-manejo-de-emergencia-y-administracion-de-desastres'],
     puc: ['Negociado de Energía de Puerto Rico', 'https://energia.pr.gov'],
     ag: ['DACO (consumer affairs)', 'https://www.daco.pr.gov'],
     water: ['AAA / PRASA', 'https://www.acueductospr.com'],
@@ -154,7 +154,7 @@ export const STATES = {
 // Fallbacks for anywhere not listed above.
 export const DEFAULT_STATE = {
   ema: ['Find your state emergency management agency', 'https://www.usa.gov/state-emergency-management'],
-  puc: ['Find your state utility commission (NARUC)', 'https://www.naruc.org/about-naruc/regulatory-commissions/'],
+  puc: ['Find your state utility commission (NARUC)', 'https://www.naruc.org/about-naruc/our-mission/regulatory-commissions/'],
   ag: ['Find your state attorney general', 'https://www.naag.org/find-my-ag/'],
 };
 
@@ -173,8 +173,8 @@ export const NATIONAL_CONTACTS = [
   { label: 'Disaster Distress Helpline (call or text)', phone: '1-800-985-5990', note: 'Free, 24/7 crisis counseling after a disaster.' },
   { label: 'Suicide & Crisis Lifeline', phone: '988' },
   { label: 'Poison Control', phone: '1-800-222-1222', note: 'Includes carbon monoxide exposure questions.' },
-  { label: 'Dialysis patients: KCER hotline', phone: '1-866-901-3773' },
-  { label: 'Report disaster fraud (NCDF)', phone: '1-866-720-5721', url: 'https://www.justice.gov/disaster-fraud' },
+  { label: 'Dialysis patients: KHARES kidney emergency hotline', phone: '1-866-446-3507' },
+  { label: 'Report FEMA / disaster-aid fraud (DHS Inspector General)', phone: '1-800-323-8603', url: 'https://www.oig.dhs.gov/hotline' },
 ];
 
 export const FEDERAL_LINKS = [

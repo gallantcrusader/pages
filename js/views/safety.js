@@ -178,7 +178,7 @@ export function renderAbout() {
         <li>Local storm reports: NWS, via the ${ext('https://mesonet.agron.iastate.edu', 'Iowa Environmental Mesonet')}</li>
         <li>River gauges: ${ext('https://water.noaa.gov', 'NOAA National Water Prediction Service')}</li>
         <li>Disaster declarations: ${ext('https://www.fema.gov/about/openfema', 'OpenFEMA')}</li>
-        <li>Water system areas: ${ext('https://www.epa.gov', 'U.S. EPA')}; electric service territories: HIFLD / Oak Ridge National Laboratory</li>
+        <li>Water system areas: ${ext('https://www.epa.gov', 'U.S. EPA')}; electric service territories: EIA / Oak Ridge National Laboratory (via PNNL)</li>
         <li>ZIP codes: ${ext('https://www.geonames.org', 'GeoNames')} (CC BY 4.0)</li>
         <li>Safety guidance: Ready.gov, CDC, EPA, USDA, FDA, FEMA</li>
       </ul>`)}

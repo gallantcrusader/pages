@@ -319,7 +319,7 @@ if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.
       // ZIP lookups made before the worker took over weren't cached; save them now so the
       // same ZIPs still work offline. The cache name must match VERSION in sw.js.
       const prefixes = new Set(state.recent.map((z) => z.slice(0, 2)));
-      return caches.open('stormcheck-v1').then((c) => c.addAll([...prefixes].map((p) => `./data/zip/${p}.json`)));
+      return caches.open('stormcheck-v2').then((c) => c.addAll([...prefixes].map((p) => `./data/zip/${p}.json`)));
     })
     .catch(() => {});
 }

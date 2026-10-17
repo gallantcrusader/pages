@@ -50,7 +50,10 @@ export async function nwsForecast(url) {
 
 // --- Local Storm Reports (damage, flooding, surge, downed trees) via Iowa Environmental Mesonet ---
 export async function stormReports(cwa, place, hours = 72) {
-  const url = `https://mesonet.agron.iastate.edu/geojson/lsr.geojson?wfos=${encodeURIComponent(cwa)}&hours=${hours}`;
+  // Explicit start/end times: the service's `hours=` shortcut has returned empty results.
+  const iso = (ms) => new Date(ms).toISOString().slice(0, 16) + 'Z';
+  const now = Date.now();
+  const url = `https://mesonet.agron.iastate.edu/geojson/lsr.geojson?wfos=${encodeURIComponent(cwa)}&sts=${iso(now - hours * 3600000)}&ets=${iso(now)}`;
   const res = await fetchJSON(url, { cacheKey: `lsr:${cwa}` });
   const items = (res.data.features || [])
     .map((f) => {
@@ -115,7 +118,7 @@ export async function activeStorms(place) {
       updated: s.lastUpdate,
       advisoryUrl: s.publicAdvisory?.url,
       graphicsUrl: s.binNumber ? `https://www.nhc.noaa.gov/graphics_${String(s.binNumber).toLowerCase()}.shtml?cone` : 'https://www.nhc.noaa.gov',
-      coneImg: `https://www.nhc.noaa.gov/storm_graphics/${folder}/${id}_5day_cone_no_line_and_wind.png`,
+      coneImg: `https://www.nhc.noaa.gov/storm_graphics/${folder}/${id}_5day_cone.png`,
       miles: place && !isNaN(lat) && !isNaN(lon) ? haversineMiles(place.lat, place.lon, lat, lon) : null,
     };
   });

@@ -50,7 +50,7 @@ export async function loadAlerts(ctx, id, { compact = false } = {}) {
     fill(ctx, id, `<ul class="alerts">${list}</ul>${more}${compact ? '<p><a href="#/live">Full details and what to do →</a></p>' : ''}${freshness(res)}`);
     return res;
   } catch {
-    fill(ctx, id, unavailable('weather alerts', 'https://alerts.weather.gov', 'alerts.weather.gov'));
+    fill(ctx, id, unavailable('weather alerts', 'https://www.weather.gov/alerts', 'weather.gov/alerts'));
   }
 }
 
@@ -318,7 +318,7 @@ async function loadRadar(ctx, id) {
   fill(
     ctx,
     id,
-    `<p class="small muted">Radar loop from ${esc(nws.radar)} (about 1–3 MB).</p>
+    `<p class="small muted">Radar loop from ${esc(nws.radar)} (usually under 1 MB).</p>
      <button type="button" class="btn" data-action="load-img" data-src="${esc(src)}" data-alt="Radar loop">🛰 Load radar loop</button>
      <p>${ext(`https://radar.weather.gov/station/${encodeURIComponent(nws.radar.toLowerCase())}/standard`, 'Open interactive radar')}</p>`,
   );

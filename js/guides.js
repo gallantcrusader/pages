@@ -187,7 +187,7 @@ export const GUIDES = [
         <li>Never pay with gift cards, wire transfers or crypto. Don’t give out your Social Security or bank number to unexpected callers.</li>
         <li>Get written estimates, check contractor licenses and reviews, and don’t pay the full amount up front.</li>
         <li>Many states ban price gouging on essentials (water, fuel, hotels, generators, repairs) during a declared emergency. Save receipts and photos of prices, and report it to your state attorney general.</li>
-        <li>Report disaster fraud to the National Center for Disaster Fraud: 1-866-720-5721.</li>
+        <li>Report fraud involving FEMA or other disaster aid to the DHS Inspector General hotline: 1-800-323-8603.</li>
       </ul>`,
   },
   {

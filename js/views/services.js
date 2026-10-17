@@ -3,7 +3,7 @@
 
 import { state, myProvider, setMyProvider } from '../state.js';
 import {
-  TYPE_LABELS, providersFor, suggestionsFor, getProvider, findElectric, findWater,
+  TYPE_LABELS, providersFor, suggestionsFor, getProvider, providerPhone, findElectric, findWater,
 } from '../providers.js';
 import { connectivityCheck, communityReports, newReportUrl } from '../sources.js';
 import { stateInfo } from '../states.js';
@@ -337,9 +337,11 @@ function showFound(type, results, err) {
     <ul class="plain found-list">${results
       .map((r, i) => {
         const known = r.match ? getProvider(r.match) : null;
+        // The map's phone numbers date from 2020 filings; prefer the directory's checked number.
+        const phone = known ? providerPhone(known, state.place?.state) : r.phone;
         return `<li><strong>${esc(known ? known.name : r.name)}</strong>
           ${known && known.name.toUpperCase() !== r.name.toUpperCase() ? `<span class="small muted">(${esc(r.name)})</span>` : ''}
-          ${r.phone ? `<span class="small"> · ${esc(r.phone)}</span>` : ''}
+          ${phone ? `<span class="small"> · ${esc(phone)}</span>` : ''}
           <button type="button" class="btn small" data-action="use-found" data-type="${type}" data-index="${i}">Use this</button></li>`;
       })
       .join('')}</ul>`;
